@@ -27,3 +27,4 @@ start:
     mov [si], al
     mov ah, 4Ch
     int 21h
+end start
