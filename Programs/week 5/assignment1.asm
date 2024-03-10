@@ -13,6 +13,7 @@
 start:
     mov ax, @data
     mov ds, ax
+    mov es, ax
 
     lea si, array1
     lea di, array2
