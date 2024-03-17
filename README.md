@@ -10,3 +10,6 @@ Week - 3: Array Operations
 
 Week - 4: Code Conversions
 
+Week - 5: String Operations
+
+Week - 6: Date/Time and File Handling
