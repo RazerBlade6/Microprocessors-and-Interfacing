@@ -2,10 +2,12 @@
 .stack 20
 
 .data
-    filename db 'file.txt', 0
+    filename db 'file.txt', '$'
     buffer db 100 dup(?)
-    file_error_msg db 'Error opening file.', 0ah, 0dh, '$'
-    read_error_msg db 'Error reading file.', 0ah, 0dh, '$'
+    db '$'
+    file_error_msg db 'Error opening file.', 13, 10, '$'
+    read_error_msg db 'Error reading file.', 13, 10, '$'
+    NULL equ 0
 
 .code
 start:
@@ -24,7 +26,7 @@ read_loop:
     lea dx, buffer
     int 21h
     jc read_error
-    cmp ax, 0
+    cmp ax, NULL
     je end_of_file
     mov ah, 09h
     lea dx, buffer
